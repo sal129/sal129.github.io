@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#parent {
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id = "parent">
+		<button onclick = start()>click me</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var parent = document.getElementById("parent");
+	var icloseKey = 27;
+	var Modal = document.createElement("div");
+	var display = 0;
+	var dragging = 0;
+	var draggable = true;
+	Modal.id = "modal";
+	Modal.style.width = "500px";
+	Modal.style.height = "300px";
+	Modal.style.background = "#D0D0D0";
+	Modal.innerHTML = "alert!!!!!!!!!!";
+	Modal.style.textAlign = "center";
+	Modal.style.lineHeight = "150px";
+	Modal.style.position = "absolute";
+	Modal.style.top = "0px";
+	Modal.style.left = "100px";
+	console.log(parent);
+	Object.prototype.init = function() {
+		if (typeof(arguments[0]) == "undefined")
+		{
+			return;
+		}
+		if (arguments[0].hasOwnProperty("content"))
+		{
+			this.innerHTML = arguments[0].content;
+		}
+		if (arguments[0].hasOwnProperty("draggable"))
+		{
+			draggable = arguments[0].draggable;
+		}
+		if (arguments[0].hasOwnProperty("closeKey"))
+		{
+			icloseKey = arguments[0].closeKey;
+		}
+	}
+	function start() {
+		console.log("forgive me");
+		Modal.init();
+		parent.appendChild(Modal);
+		display = 1;
+	}
+	document.onkeydown = function(event) {
+		if (event && event.keyCode == icloseKey)
+		{
+			parent.removeChild(Modal);
+			Modal.style.top = "0px";
+			Modal.style.left = "100px";
+			display = 0;
+		}
+    }; 
+    Modal.onmousedown = function(event) {
+    	if (display == 1 && draggable == true)
+    	{
+    		dragging = 1;
+    	}
+    }
+    Modal.onmouseup = function(event) {
+    	dragging = 0;
+    }
+    document.onmousemove = function(event) {
+    	if (dragging)
+    	{
+    		Modal.style.top = event.clientY + 'px';
+    		Modal.style.left = event.clientX + 'px';
+    	}
+    }
+</script>
+</html>
