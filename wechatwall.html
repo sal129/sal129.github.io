@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wechat wall</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+	<div id="notice">
+    <div>请回复“上墙”+自己想说的话发送到10086，另外这是一个很炫酷的微信墙公告呢，我非常非常喜欢这个公告呢，虽然我并不知道自己在做什么鬼，嘻嘻。</div>
+    <button id="control">微信墙开关</button>
+    </div>
+    <hr>
+    <div id="message">
+    	<div id="message1"><img src="./loading.gif" alt="">
+        <p class="marquee"><span></span></p>
+        <div><p></p></div></div>
+    	<div id="message2"><img src="./loading.gif" alt="">
+        <p class="marquee"><span></span></p>
+        <div><p></p></div></div>
+        <div id="message3"><img src="./loading.gif" alt="">
+        <p class="marquee"><span></span></p>
+        <div><p></p></div></div>
+    </div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/socket.io/1.4.8/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="./client.js"></script>
