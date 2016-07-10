@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>10个小球碰撞 js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style type="text/css">
+body {
+       margin:0;
+       padding:0;
+      text-align: center;
+}
+#screendad { width: 1022px; height: 558px; position: relative; background: url('images/snooker_table.jpg');margin: 0 auto}
+#screen { width: 962px; height: 498px; position: relative; background: rgba(0,0,0,0);margin: 0 auto;top:30px;}
+#inner { position: absolute; left:0px; top:0px; width:100%; height:100%; }
+#screen p {color:white;font:bold 14px;}
+.black { background:url('images/QP1.png') no-repeat; background-size: auto 100%;}
+.yellow { background:url('images/QP2.png') no-repeat; background-size: auto 100%;}
+.white { background:url('images/QP3.png') no-repeat; background-size: auto 100%;}
+.blue { background:url('images/QP4.png') no-repeat; background-size: auto 100%;}
+.red { background:url('images/QP5.png') no-repeat; background-size: auto 100%;}
+.green { background:url('images/QP6.png') no-repeat; background-size: auto 100%;}
+.pink { background:url('images/QP7.png') no-repeat; background-size: auto 100%; }
+.coffee { background:url('images/QP8.png') no-repeat; background-size: auto 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="screendad">
+      <div id="screen" >
+          <p></p>
+          <div id="inner">
+          </div>
+      </div>
+      </div>
+      <input type="button" id="start" value="start" >
+      <input type="button" id="stop" value="stop">
+      <br><br><br>
+<script src="script/test.js"></script>
+</body>
+</html>
